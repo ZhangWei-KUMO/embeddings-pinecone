@@ -8,7 +8,7 @@ load_dotenv()
 
 # 分割
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-text_splitter = RecursiveCharacterTextSplitter(chunk_size = 1500, chunk_overlap = 200)
+text_splitter = RecursiveCharacterTextSplitter(chunk_size = 2500, chunk_overlap = 200)
 all_splits = text_splitter.split_documents(data)
 # 存储进本地Chroma向量数据库
 from langchain.vectorstores import Chroma
