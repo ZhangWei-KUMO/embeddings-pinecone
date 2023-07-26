@@ -1,4 +1,3 @@
-from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.chains import RetrievalQA
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import Pinecone

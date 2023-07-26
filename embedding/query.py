@@ -7,7 +7,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.chains import RetrievalQA
 
 vectorstore = Pinecone(
-    index, embed.embed_query, "秦刚是谁", "events
+    index, embed.embed_query, "秦刚是谁", "events"
 )
 llm = ChatOpenAI(
     openai_api_key=os.environ.get("OPENAI_API_KEY"),

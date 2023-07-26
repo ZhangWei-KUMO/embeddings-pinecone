@@ -14,7 +14,7 @@ def extract_text_from_pdf(pdf_path):
 pdf_path = "./rootcloud_public.pdf"
 
 # 调用函数提取文本
-all_text = extract_text_from_pdf(pdf_path)
+extract_text_from_pdf(pdf_path)
 
 # 打印提取的文本
 #print(all_text)
