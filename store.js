@@ -8,7 +8,6 @@ import * as fs from 'fs';
 const textSplitter = new RecursiveCharacterTextSplitter({ chunkSize: 1500, chunkOverlap: 100});
 const embedder = new OpenAIEmbeddings();
 import {index} from './settings.js';
-
 (async () => {
     //read article
     const article = await fs.readFileSync('files.txt', { encoding: 'utf-8' });
