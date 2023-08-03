@@ -1,19 +1,21 @@
-# embeddings-pinecone
+# Pinecone script
 
-本脚本是基于**Pinecone**向量数据库和**langchain**构建的GPT Embeddings脚本集，文件结构为：
-1. `clear.js` 对原生文本进行数据清洗
-2. `store.js` 将文本数据向量化并存储至Pinecone数据库中
-3. `settings.js` Pinecone数据库设置
+本项目基于Pinecone构建的工具脚本，方便用户便利操作Pinecone。
 
-# 表格类数据处理 
+## Python
 
-GPT模型是一个自然语言处理模型，其主要用途是理解和生成文本。虽然GPT可以读取文本数据，但它并不直接支持读取表格数据。如果您想让GPT读取表格数据，您需要将表格数据转换为文本形式。一种常见的方法是将表格数据转换为自然语言描述。您可以使用表格中的列名作为属性，并将每行的值组合成描述性的句子。例如，对于以下表格：
+### 查询Pinecone Index状况
 
-| 姓名 | 年龄 | 性别 |
-| ---- | ---- | ---- |
-| 张三 | 25   | 男   |
-| 李四 | 30   | 女   |
+```bash
+python status.py
+```
 
-您可以将其转换为以下文本：
-"姓名：张三，年龄：25，性别：男。姓名：李四，年龄：30，性别：女。"
-然后，您可以将这个文本输入给GPT模型进行处理。
+### 测试NameSpace数据读取
+```bash
+
+```
+### 删除NameSpace 
+
+```bash
+python deleteNS.py
+```

@@ -11,8 +11,9 @@ pinecone.init(
     environment=os.environ.get("PINECONE_ENVIRONMENT"),
     api_key=os.environ.get("PINECONE_API_KEY")
 )
+print("您的向量数据库中有如下index:",pinecone.list_indexes())
 
-index = pinecone.Index('gpt-test-pdf')
+index = pinecone.Index(os.environ.get("PINECONE_INDEX_NAME"))
 
 def get_embedding(text, model="text-embedding-ada-002"):
    text = text.replace("\n", " ")

@@ -7,5 +7,5 @@ await pinecone.init({
     environment: process.env.PINECONE_ENVIRONMENT,
     apiKey: process.env.PINECONE_API_KEY
 });
-
-export const index = pinecone.Index('relai-index')
+print(process.env.PINECONE_INDEX_NAME)
+export const index = pinecone.Index(process.env.PINECONE_INDEX_NAME)

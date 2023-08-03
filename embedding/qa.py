@@ -2,16 +2,17 @@ from langchain.chains import RetrievalQA
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import Pinecone
 from settings import llm
+import os
 
 embeddings = OpenAIEmbeddings()
-index_name = "gpt-test-pdf"
-vectorstore = Pinecone.from_existing_index(index_name, embeddings,namespace='qingang')
+
+vectorstore = Pinecone.from_existing_index(os.environ.get("PINECONE_INDEX_NAME"), embeddings,namespace='namespace1')
 
 qa = RetrievalQA.from_chain_type(
     llm=llm,
-    chain_type="stuff",
+    chain_type="map_reduce",
     retriever=vectorstore.as_retriever()
 )
 
-res = qa("秦刚为什么不当部长")
+res = qa("本文的主要内容是什么？")
 print(res)
